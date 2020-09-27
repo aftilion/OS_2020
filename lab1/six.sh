@@ -1,4 +1,4 @@
-#!/bin/bush
+#!/bin/bash
 
 grep -E "(\(II\)|\(WW\))" /var/log/anaconda/X.log |
 sed "s/(II)/Information/; s/(WW)/Warning/" |

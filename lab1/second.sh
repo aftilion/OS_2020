@@ -1,4 +1,4 @@
-#!/bin/bush
+#!/bin/bash
 
 res=""
 input=""

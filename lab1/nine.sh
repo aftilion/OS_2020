@@ -1,4 +1,4 @@
-#!/bin/bush
+#!/bin/bash
 
 files=$(ls /var/log/*.log)
 let count=0
