@@ -3,8 +3,8 @@
 if [[ "$(pwd)" == "$HOME" ]] 
 then
 echo "$(pwd)"
-exit(0)
+exit 0
 else
 echo "Run from home directory!"
-exit(1)
-
+exit 1
+fi

@@ -1,5 +1,4 @@
 #!bin/bash
 
-grep -Eo "[A-Za-z0-9]+:x:[0-9]+" /etc/passwd|
-sed "s/:x:/ / " |
-sort -n -k 2
+awk -F : '{print ($1 " " $3) }' /etc/passwd | sort -n -k 2
+

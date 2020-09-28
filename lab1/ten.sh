@@ -1,7 +1,8 @@
 #!/bin/bash
 
-man bash |
-awk '{ for ( i = 1; i <=NF; i++) if (length($i) >= 4) print $i }' |
+man bash|
+grep -o -i "[[:alpha:]]\{4,\}" |
+tr "[:upper:]" "[:lower:]" |
 sort | uniq -c |
-sort -n -k 1 --reverse |
+sort -r -n |
 head -3

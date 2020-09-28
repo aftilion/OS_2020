@@ -1,6 +1,6 @@
-#!/bin/bash
+#!bin/bash
 
-grep -E "(\(II\)|\(WW\))" /var/log/anaconda/X.log |
-sed "s/(II)/Information/; s/(WW)/Warning/" |
-sort -k 3 --reverse > full.log
+awk '$3 == "(II)" {$3="Information:" ; print $0}' /var/log/anaconda/X.log > full.log
+
+awk '$3 == "(WW)" {$3="Warning:" ; print $0}' /var/log/anaconda/X.log > full.log
 
