@@ -5,6 +5,6 @@ then
 echo "$(pwd)"
 exit 0
 else
-echo "Run from home directory!"
+echo "Error!"
 exit 1
 fi
