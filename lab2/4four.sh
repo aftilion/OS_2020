@@ -12,8 +12,8 @@ fi
 if [ -z $rtime ] || [ -z $swtc ]; then
 ART=0
 else
-ART=$(echo "scale=5; $rtime/$swich" | bc | awk '{print "%f", $0}')
+ART=$(echo "scale=5; $rtime/$swtc" | bc | awk '{print "%f", $0}')
 fi
 echo "$pid $ppid $ART"
-done | sort -nk2 | awk '{print "ProcessID="$1" : Parent_ProcessID="$2" : Average_Running_Time="$3}'>four.txt
+done | sort -nk2 | awk '{print "ProcessID="$1" : Parent_ProcessID="$2" : Average_Running_Time="$3}'>task4.txt
 
