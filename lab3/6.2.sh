@@ -39,6 +39,7 @@ do
                      ;;
 
              esac
-                    sleep 44
+
                     echo $number
+                    sleep 4
   done
