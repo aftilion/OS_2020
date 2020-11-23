@@ -57,12 +57,19 @@ restore() {
 
   if [[ -z $(grep "$1" $TRASHLOG) ]];
   then
-      echo "File $1 doesnt exist or we need only name , no path"
+      echo "File $1 doesnt exist "
       exit 1
   fi
 
-   for  tr in $(grep "$1" $TRASHLOG | awk '{print $NF}');do 
-         FN=$(grep  $tr $TRASHLOG | awk '{$NF=""; print $0}')
+  if [[ $(grep -E "/$1 " $TRASHLOG) == "" ]];
+  then
+           echo " Exception with filename or we nwwd only name"
+           exit 1
+  fi
+
+
+   for  tr in $(grep "$1 " $TRASHLOG | awk '{print $NF}');do 
+         FN=$(grep  $tr   $TRASHLOG | awk '{$NF=""; print $0}')
          FN=$(echo "$FN" | sed  's/ *$//')
          read -p "Restore ${FN}? [y/n] " ans
  
@@ -77,7 +84,7 @@ restore() {
                 continue
              ;;
             *)
-            echo "Answer exception , write (Y/y) / (N/n)"
+
 ;;
 esac
 
